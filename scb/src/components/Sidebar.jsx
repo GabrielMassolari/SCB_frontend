@@ -62,34 +62,54 @@ export default function SideBar({ isOpen }) {
 
 const itemMenu = [
   {
-    nome: 'Lojas',
-    path: '/lojas',
+    nome: 'Animais',
+    path: '/animais',
     icon: 'bi-cart-check-fill',
 
   },
   {
-    nome: 'Promotores',
-    path: '/promotores',
+    nome: 'Galpoes',
+    path: '/galpoes',
     icon: 'bi-person-fill',
   },
   {
-    nome: 'Fornecedores',
-    path: '/fornecedores',
+    nome: 'Entradas',
+    path: '/entradas',
     icon: 'bi-box-fill',
   },
   {
-    nome: 'Usuários',
-    path: '/usuarios',
+    nome: 'Funcionarios',
+    path: '/funcionarios',
     icon: 'bi-person-badge-fill',
   },
   {
-    nome: 'Perfis',
-    path: '/perfils',
+    nome: 'Caminhoes',
+    path: '/caminhoes',
     icon: 'bi-person-fill-lock',
   },
   {
-    nome: 'Produtos',
-    path: '/produtos',
+    nome: 'Lotes',
+    path: '/lotes',
+    icon: 'bi-box2-fill',
+  },
+  {
+    nome: 'Vacinacoes',
+    path: '/vacinacoes',
+    icon: 'bi-box2-fill',
+  },
+  {
+    nome: 'Clientes',
+    path: '/clientes',
+    icon: 'bi-box2-fill',
+  },
+  {
+    nome: 'Vendas',
+    path: '/vendas',
+    icon: 'bi-box2-fill',
+  },
+  {
+    nome: 'Animais Recebidos Mes',
+    path: '/relatorios/animaisRecebidosMes',
     icon: 'bi-box2-fill',
   },
 ];
