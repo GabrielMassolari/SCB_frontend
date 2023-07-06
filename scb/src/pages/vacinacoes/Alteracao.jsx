@@ -20,7 +20,11 @@ const Alteracao = () => {
         axios.get(`/vacinacoes/${id}`)
             .then((resp) => {
                 if (resp.status === 200) {
-                    setInputs(resp.data);
+                    let data = resp.data;
+                    data["lote"] = data.loteId;
+                    data["funcionario"] = data.funcionarioId
+                    data["galpao"] = data.animal.galpaoId
+                    setInputs(data);
                 } else if (resp.status === 404) {
                     navigate("/vacinacoes");
                 } else {

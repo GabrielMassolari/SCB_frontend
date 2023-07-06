@@ -3,7 +3,7 @@ const Sobre = () => {
         <>
             <h1>Sobre Nós</h1>
             <hr />
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, dignissimos deserunt magnam voluptates dolorem similique itaque ratione, animi repellat necessitatibus nihil deleniti? Maxime a dolor cumque molestiae, doloribus suscipit alias?</p>
+            <p>Sistema de Gerenciamento de Bovinos é um sistema de controle de Entrada, Vacinações e Venda de bovinos</p>
         </>
     )
 }

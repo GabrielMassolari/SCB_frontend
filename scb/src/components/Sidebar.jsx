@@ -17,20 +17,14 @@ export default function SideBar({ isOpen }) {
               <svg className="bi pe-none me-2" width="40" height="32">
                 <use xlinkHref="#bootstrap"></use>
               </svg>
-              <span className="fs-4"><i className="bi bi-cart4 fs-4"></i> SCAP</span>
+              <span className="fs-4"><i className="bi bi-clipboard2-data-fill fs-4"></i>🐮 SCB</span>
             </div>
             <hr />
             <ul className="nav nav-pills flex-column mb-auto">
               <li className="nav-item" >
                 <NavLink className=' link-menu-sidebar' to='/'>
                   <i className={`bi bi-house-fill m-2`}></i>
-                  Dashboard
-                </NavLink>
-              </li>
-              <li className="nav-item" >
-                <NavLink className='link-menu-sidebar' to='/relatorios'>
-                  <i className={`bi bi-file-text-fill m-2`}></i>
-                  Relatórios
+                  Home
                 </NavLink>
               </li>
               <li className="nav-item" >
@@ -39,7 +33,43 @@ export default function SideBar({ isOpen }) {
                 </button>
                 <div className="collapse show" id="cadastro-collapse">
                   <ul className="nav nav-pills flex-column mb-auto">
-                    {itemMenu.map((item, index) => (
+                    {menuCadastro.map((item, index) => (
+                      <li className="nav-item" key={index}>
+                        <NavLink className=' link-menu-sidebar' to={item.path}>
+
+                          <i className={`bi ${item.icon} m-2`}></i>
+                          {item.nome}
+                        </NavLink>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </li>
+              <li className="nav-item" >
+                <button className="link-menu-sidebar btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#processo-collapse" >
+                  <i className="bi bi-patch-plus-fill">&nbsp;</i> Processos <i className="bi bi-caret-down-fill"></i>
+                </button>
+                <div className="collapse show" id="processo-collapse">
+                  <ul className="nav nav-pills flex-column mb-auto">
+                    {menuProcesso.map((item, index) => (
+                      <li className="nav-item" key={index}>
+                        <NavLink className=' link-menu-sidebar' to={item.path}>
+
+                          <i className={`bi ${item.icon} m-2`}></i>
+                          {item.nome}
+                        </NavLink>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </li>
+              <li className="nav-item" >
+                <button className="link-menu-sidebar btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#relatorio-collapse" >
+                  <i className="bi bi-patch-plus-fill">&nbsp;</i> Relatórios <i className="bi bi-caret-down-fill"></i>
+                </button>
+                <div className="collapse show" id="relatorio-collapse">
+                  <ul className="nav nav-pills flex-column mb-auto">
+                    {menuRelatorio.map((item, index) => (
                       <li className="nav-item" key={index}>
                         <NavLink className=' link-menu-sidebar' to={item.path}>
 
@@ -60,22 +90,17 @@ export default function SideBar({ isOpen }) {
   );
 }
 
-const itemMenu = [
+const menuCadastro = [
   {
     nome: 'Animais',
     path: '/animais',
-    icon: 'bi-cart-check-fill',
+    icon: 'bi-caret-right-fill',
 
   },
   {
     nome: 'Galpoes',
     path: '/galpoes',
-    icon: 'bi-person-fill',
-  },
-  {
-    nome: 'Entradas',
-    path: '/entradas',
-    icon: 'bi-box-fill',
+    icon: 'bi-house-gear',
   },
   {
     nome: 'Funcionarios',
@@ -85,7 +110,7 @@ const itemMenu = [
   {
     nome: 'Caminhoes',
     path: '/caminhoes',
-    icon: 'bi-person-fill-lock',
+    icon: 'bi-truck',
   },
   {
     nome: 'Lotes',
@@ -93,23 +118,63 @@ const itemMenu = [
     icon: 'bi-box2-fill',
   },
   {
-    nome: 'Vacinacoes',
-    path: '/vacinacoes',
-    icon: 'bi-box2-fill',
-  },
-  {
     nome: 'Clientes',
     path: '/clientes',
-    icon: 'bi-box2-fill',
+    icon: 'bi-person-fill',
+  },
+]
+
+const menuProcesso = [
+  {
+    nome: 'Entradas',
+    path: '/entradas',
+    icon: 'bi-chevron-double-right',
+
+  },
+  {
+    nome: 'Vacinacoes',
+    path: '/vacinacoes',
+    icon: 'bi-capsule',
   },
   {
     nome: 'Vendas',
     path: '/vendas',
-    icon: 'bi-box2-fill',
-  },
+    icon: 'bi-cart-check',
+  }
+]
+
+const menuRelatorio = [
   {
     nome: 'Animais Recebidos Mes',
     path: '/relatorios/animaisRecebidosMes',
-    icon: 'bi-box2-fill',
+    icon: 'bi-clipboard-fill',
   },
-];
+  {
+    nome: 'Média Recebimento Diário',
+    path: '/relatorios/mediaRecebDiario',
+    icon: 'bi-clipboard-fill',
+  },
+  {
+    nome: 'Lotes Próximos Vencer',
+    path: '/relatorios/lotesProximosVencer',
+    icon: 'bi-clipboard-fill',
+  },
+  {
+    nome: 'Total Vacinas Aplicadas',
+    path: '/relatorios/totalVacinasAplicadas',
+    icon: 'bi-clipboard-fill',
+  },
+  {
+    nome: 'Total Vendas por Cliente',
+    path: '/relatorios/totalVendasCliente',
+    icon: 'bi-clipboard-fill',
+  },
+  {
+    nome: 'Média de Peso de Animais Vendidos',
+    path: '/relatorios/mediaPesoAnimais',
+    icon: 'bi-clipboard-fill',
+  },
+]
+
+
+;

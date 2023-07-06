@@ -10,6 +10,8 @@ const Cadastro = () => {
   const [inputs, setInputs] = useState({});
   const [errors, setErrors] = useState({});
   const [loading, setLoading] = useState(false);
+  const [errorRn, setErrorRn] = useState("");
+
   const navigate = useNavigate();
   
 
@@ -33,6 +35,9 @@ const Cadastro = () => {
             alert("Funcionario inserido com sucesso!");
             navigate("/funcionarios")
           }
+        }).catch((error) => {
+          setErrorRn(error.response.data.message);
+          //alert(error.response.data.message)
         });
       console.log("Enviou dados para a API.");
     });
@@ -42,10 +47,6 @@ const Cadastro = () => {
     validarLocal();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [inputs])
-
-  function handleClick() {
-    console.log(inputs)
-  }
 
   return (
     <>
@@ -58,7 +59,11 @@ const Cadastro = () => {
             <span className="visually-hidden">Carregando...</span>
           </div>
         </div>)}
-      <button onClick={handleClick}>Teste</button>
+      {errorRn && 
+      <div className="alert alert-danger mt-3" role="alert">
+        {errorRn}
+      </div>
+      }
     </>
   )
 

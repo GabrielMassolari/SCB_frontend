@@ -90,13 +90,13 @@ const Form = ({ handleSubmit, handleChange, errors, inputs, handleChangeSelect }
     return (
         <form onSubmit={handleSubmit} noValidate autoComplete="off">
             <FormSelect field="galpao" label="Galpão" placeholder="Selecione o galpão..." error={errors?.galpao} onChange={handleChange} value={inputs?.galpao} options={optionGalpoes} />
-            <FormSelect field="funcionario" label="Funcionário" placeholder="Selecione o funcionário..." error={errors?.funcionario} onChange={handleChange} value={inputs?.funcionario.id} options={optionsFuncionario} />
+            <FormSelect field="funcionario" label="Funcionário" placeholder="Selecione o funcionário..." error={errors?.funcionario} onChange={handleChange} value={inputs?.funcionario} options={optionsFuncionario} />
             <FormInput type="date" field="dataEntrada" label="Data Entrada" placeholder="01/01/2023" error={errors?.dataEntrada} onChange={handleChange} value={inputs?.dataEntrada} />
             <Select
                 isMulti
                 options={optionsAnimais}
                 onChange={handleChangeSelect}
-                className="animais"
+                className="mt-3"
                 name="animais"
                 id="animais"
                 isClearable={true}

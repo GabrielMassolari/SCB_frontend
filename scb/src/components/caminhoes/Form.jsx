@@ -10,7 +10,7 @@ const Form = ({ handleSubmit, handleChange, errors, inputs }) => {
             <FormInput type="number" field="ano" label="Ano" placeholder="2023" error={errors?.ano} onChange={handleChange} value={inputs?.ano} />
             <FormInput type="text" field="marca" label="Marca" placeholder="Marca do caminhão" error={errors?.marca} onChange={handleChange} value={inputs?.marca} />
             <FormInput type="number" field="quilometragem" label="Quilometragem" placeholder="XXX km" error={errors?.quilometragem} onChange={handleChange} value={inputs?.quilometragem} />
-            <FormButtons cancelTarget="/alunos" />
+            <FormButtons cancelTarget="/caminhoes" />
         </form>
     )
 }

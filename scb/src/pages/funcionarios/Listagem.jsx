@@ -52,7 +52,7 @@ const Listagem = () => {
                   <td>{funcionario.id}</td>
                   <td>{funcionario.nome}</td>
                   <td>{funcionario.cpf}</td>
-                  <td>{funcionario.datanascimento}</td>
+                  <td>{funcionario.dataNascimento}</td>
                   <td>{funcionario.salario}</td>
                   <td>
                     <Link className="btn btn-sm btn-success me-1" to={`/funcionarios/alterar/${funcionario.id}`}>

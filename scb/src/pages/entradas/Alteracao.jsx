@@ -20,7 +20,10 @@ const Alteracao = () => {
         axios.get(`/entradas/${id}`)
             .then((resp) => {
                 if (resp.status === 200) {
-                    setInputs(resp.data);
+                    let data = resp.data;
+                    data["galpao"] = data.galpaoId;
+                    data["funcionario"] = data.funcionarioId
+                    setInputs(data);
                 } else if (resp.status === 404) {
                     navigate("/entradas");
                 } else {

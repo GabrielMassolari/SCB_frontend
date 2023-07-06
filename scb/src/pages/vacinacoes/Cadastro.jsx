@@ -9,6 +9,7 @@ const Cadastro = () => {
 
   const [inputs, setInputs] = useState({});
   const [errors, setErrors] = useState({});
+  const [errorRn, setErrorRn] = useState("");
   const navigate = useNavigate();
 
   function validarLocal(callbackAction) {
@@ -29,6 +30,9 @@ const Cadastro = () => {
             alert("Vacinacao inserida com sucesso!");
             navigate("/vacinacoes")
           }
+        }).catch((error) => {
+          setErrorRn(error.response.data.message);
+          //alert(error.response.data.message)
         });
       console.log("Enviou dados para a API.");
     });
@@ -45,6 +49,11 @@ const Cadastro = () => {
       <h1>Cadastro de Vacinação</h1>
       <hr />
       <FormVacinacao handleSubmit={handleSubmit} handleChange={handleChangeLocal} inputs={inputs} errors={errors} />
+      {errorRn && 
+        <div className="alert alert-danger mt-3" role="alert">
+          {errorRn}
+        </div>
+      }
     </>
   )
 }

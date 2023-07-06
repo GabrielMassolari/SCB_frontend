@@ -1,17 +1,16 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import estilos from "./Listagem.module.css"
 import axios from "axios";
 
 const Listagem = () => {
-  const [relatorio, setRelatorio] = useState({});
+  const [relatorio, setRelatorio] = useState([]);
 
   const carregarDados = () => {
     axios
       .get("/entrada/getTotalAnimaisMesAtual")
       .then((resp) => {
         setRelatorio(resp.data);
-      });
+    });
   }
 
   useEffect(() => {
@@ -22,7 +21,6 @@ const Listagem = () => {
     <>
       <div className="d-flex justify-content-between align-items-center">
         <h1>Total de Animais recebidos no mês atual</h1>
-        <Link className="btn btn-primary" to="cadastrar">Novo</Link>
       </div>
       <hr />
       {(
@@ -34,9 +32,11 @@ const Listagem = () => {
           </thead>
           <tbody>
             {
-                <tr>
-                  <td>{relatorio[0].total_animais}</td>
-                </tr>
+              relatorio.map((rel, idx) =>
+              <tr key={idx}>
+                <td>{rel.total_animais}</td>
+              </tr>
+              )
             }
           </tbody>
         </table>

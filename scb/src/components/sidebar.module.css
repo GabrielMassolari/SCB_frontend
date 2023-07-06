@@ -1,3 +1,7 @@
 .imgLogo {
     font-size: 36px;
 }
+
+a {
+    text-decoration: none;
+}

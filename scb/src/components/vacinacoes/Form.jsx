@@ -92,7 +92,7 @@ const Form = ({ handleSubmit, handleChange, errors, inputs }) => {
             <FormSelect field="funcionario" label="Funcionário" placeholder="Selecione o funcionário..." error={errors?.funcionario} onChange={handleChange} value={inputs?.funcionario} options={optionsFuncionario} />
             <FormSelect field="lote" label="Lote de Vacina" placeholder="Selecione o lote..." error={errors?.lote} onChange={handleChange} value={inputs?.lote} options={optionsLotes} />
             <FormInput type="date" field="dataVacinacao" label="Data Vacinação" placeholder="01/01/2023" error={errors?.dataVacinacao} onChange={handleChange} value={inputs?.dataVacinacao} />
-            <FormButtons cancelTarget="/entradas" />
+            <FormButtons cancelTarget="/vacinacoes" />
         </form>
     )
 }

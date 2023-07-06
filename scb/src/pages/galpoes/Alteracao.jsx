@@ -12,7 +12,7 @@ const Alteracao = () => {
 
     const id = useParams().id;
     if (!id) {
-        navigate("/listagem");
+        navigate("/galpoes");
     }
 
     function carregarDados() {

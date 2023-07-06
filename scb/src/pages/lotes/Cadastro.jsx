@@ -25,7 +25,7 @@ const Cadastro = () => {
       axios
         .post("/lotes", inputs)
         .then((resp) => {
-          if (resp.status == 201) {
+          if (resp.status == 200) {
             alert("Lote inserido com sucesso!");
             navigate("/lotes")
           }

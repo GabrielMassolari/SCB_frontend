@@ -42,6 +42,11 @@ import AlteracaoVenda from './pages/vendas/Alteracao';
 import ExclusaoVenda from './pages/vendas/Exclusao';
 
 import ListagemAnimaisRecebidosMes from './pages/relatorios/AnimaisRecebidosMes';
+import ListagemMediaRecebimentoDiario from './pages/relatorios/MediaRecebDiario';
+import ListagemLotesProximosVencer from './pages/relatorios/LotesProximosVencer';
+import ListagemTotalVacinasAplicadas from './pages/relatorios/TotalVacinasAplicadas';
+import ListagemTotalVendasCliente from './pages/relatorios/TotalVendasCliente';
+import ListagemMediaPesoAnimais from './pages/relatorios/MediaPesoAnimais';
 import NotFound from './pages/NotFound';
 
 
@@ -115,8 +120,11 @@ const App = () => {
               </Route>
               <Route path="relatorios">
                 <Route path="animaisRecebidosMes" element={<ListagemAnimaisRecebidosMes />} />
-                <Route path="alterar/:id" element={<AlteracaoVenda />} />
-                <Route path="excluir/:id" element={<ExclusaoVenda />} />
+                <Route path="mediaRecebDiario" element={<ListagemMediaRecebimentoDiario />} />
+                <Route path="lotesProximosVencer" element={<ListagemLotesProximosVencer />} />
+                <Route path="totalVacinasAplicadas" element={<ListagemTotalVacinasAplicadas />} />
+                <Route path="totalVendasCliente" element={<ListagemTotalVendasCliente />} />
+                <Route path="mediaPesoAnimais" element={<ListagemMediaPesoAnimais />} />
               </Route>
               <Route path="*" element={<NotFound />} />
             </Route>
